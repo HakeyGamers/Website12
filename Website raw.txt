@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XYZ - Authentic Homemade Delights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background-color: #92400e; /* Fallback solid color */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            background-size: cover;
+            background-position: center;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .category-tab.active {
+            background-color: #f59e0b;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-amber-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mr-3">
+                    <span class="text-white font-bold text-xl">XYZ</span>
+                </div>
+                <h1 class="text-2xl font-bold text-amber-800">XYZ Homemade Delights</h1>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-amber-800 hover:text-amber-600 font-medium">Home</a>
+                <a href="#products" class="text-amber-800 hover:text-amber-600 font-medium">Products</a>
+                <a href="#about" class="text-amber-800 hover:text-amber-600 font-medium">About</a>
+                <a href="#contact" class="text-amber-800 hover:text-amber-600 font-medium">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-full bg-amber-100 text-amber-800 hover:bg-amber-200">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="p-2 rounded-full bg-amber-100 text-amber-800 hover:bg-amber-200">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="ml-1 bg-amber-500 text-white text-xs px-1.5 py-0.5 rounded-full">3</span>
+                </button>
+                <button class="md:hidden p-2 rounded-full bg-amber-100 text-amber-800 hover:bg-amber-200">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Authentic Homemade Delights</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Experience the taste of tradition with XYZ's handcrafted snacks, sweets, pickles, and masalas made with love and grandma's secret recipes.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    Explore Products
+                </a>
+                <a href="#contact" class="bg-white hover:bg-gray-100 text-amber-800 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-amber-50">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-amber-800">100% Natural</h3>
+                    <p class="text-gray-600">Made with pure, natural ingredients without any artificial preservatives or additives.</p>
+                </div>
+
+                <div class="text-center p-6 rounded-lg bg-amber-50">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-amber-800">Homemade Goodness</h3>
+                    <p class="text-gray-600">Prepared with love using traditional family recipes passed down through generations.</p>
+                </div>
+
+                <div class="text-center p-6 rounded-lg bg-amber-50">
+                    <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-award text-amber-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 text-amber-800">Premium Quality</h3>
+                    <p class="text-gray-600">Only the finest ingredients are selected to ensure exceptional taste and quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Our Delicious Products</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">From crunchy snacks to sweet delights, spicy pickles to aromatic masalas - we've got all your traditional favorites.</p>
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="flex overflow-x-auto pb-4 mb-8 scrollbar-hide">
+                <div class="flex space-x-2 mx-auto">
+                    <button class="category-tab px-4 py-2 rounded-full bg-white text-amber-800 font-medium whitespace-nowrap active" data-category="all">All Products</button>
+                    <button class="category-tab px-4 py-2 rounded-full bg-white text-amber-800 font-medium whitespace-nowrap" data-category="chiwda">Chiwda</button>
+                    <button class="category-tab px-4 py-2 rounded-full bg-white text-amber-800 font-medium whitespace-nowrap" data-category="laddo">Laddos</button>
+                    <button class="category-tab px-4 py-2 rounded-full bg-white text-amber-800 font-medium whitespace-nowrap" data-category="chakli">Chaklis</button>
+                    <button class="category-tab px-4 py-2 rounded-full bg-white text-amber-800 font-medium whitespace-nowrap" data-category="pickel">Pickles</button>
+                    <button class="category-tab px-4 py-2 rounded-full bg-white text-amber-800 font-medium whitespace-nowrap" data-category="masala">Masalas</button>
+                    <button class="category-tab px-4 py-2 rounded-full bg-white text-amber-800 font-medium whitespace-nowrap" data-category="chutney">Chutneys</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Chiwda Products -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="chiwda">
+                    <div class="relative h-48 overflow-hidden">
+                        <!-- Add your product image here -->
+                        <img src="your-local-image-path.jpg" alt="Poha Chiwda" class="w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded-full">NEW</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Poha Chiwda</h3>
+                        <p class="text-gray-600 text-sm mb-3">Crunchy flattened rice snack with nuts and spices</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹120</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="chiwda">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Murmura Chiwda" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Murmura Chiwda</h3>
+                        <p class="text-gray-600 text-sm mb-3">Puffed rice snack with peanuts and spices</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹110</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="chiwda">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Maka Chiwda" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Maka Chiwda</h3>
+                        <p class="text-gray-600 text-sm mb-3">Corn flakes snack with traditional spices</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹130</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laddo Products -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="laddo">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80" alt="Dryfruits Laddo" class="w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">BESTSELLER</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Dryfruits Laddo</h3>
+                        <p class="text-gray-600 text-sm mb-3">Nutritious sweet balls packed with dry fruits</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹200</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="laddo">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80" alt="Besan Laddo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Besan Laddo</h3>
+                        <p class="text-gray-600 text-sm mb-3">Classic gram flour sweet with ghee and nuts</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹150</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="laddo">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1527&q=80" alt="Nachni Laddo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Nachni Laddo</h3>
+                        <p class="text-gray-600 text-sm mb-3">Healthy ragi flour sweet with jaggery</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹160</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chakli Products -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="chakli">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Bazni Chakli" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Bazni Chakli</h3>
+                        <p class="text-gray-600 text-sm mb-3">Spiral-shaped crispy snack made with rice flour</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹140</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="chakli">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Moong Chakli" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Moong Chakli</h3>
+                        <p class="text-gray-600 text-sm mb-3">Crunchy moong dal flour spiral snack</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹150</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pickle Products -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="pickel">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Mango Pickle" class="w-full h-full object-cover">
+                        <div class="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">POPULAR</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Mango Pickle</h3>
+                        <p class="text-gray-600 text-sm mb-3">Tangy and spicy traditional mango pickle</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹180</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="pickel">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Chilli Pickle" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Chilli Pickle</h3>
+                        <p class="text-gray-600 text-sm mb-3">Fiery green chilli pickle for spice lovers</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹160</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Masala Products -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="masala">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Garam Masala" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Garam Masala</h3>
+                        <p class="text-gray-600 text-sm mb-3">Aromatic blend of whole spices</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹100</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chutney Products -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300" data-category="chutney">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1607330289024-1535c6b4e1c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Lasoon Khobra Chutney" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-1 text-amber-800">Lasoon Khobra Chutney</h3>
+                        <p class="text-gray-600 text-sm mb-3">Garlic coconut chutney with perfect balance</p>
+                        <div class="flex justify-between items-center">
+                            <span class="font-bold text-amber-600">₹130</span>
+                            <button class="bg-amber-100 hover:bg-amber-200 text-amber-800 px-3 py-1 rounded-full text-sm font-medium">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <button class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    View All Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <!-- Add your about section image here -->
+                    <img src="your-local-image-path.jpg" alt="About XYZ" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold text-amber-800 mb-6">Our Story</h2>
+                    <p class="text-gray-600 mb-4">XYZ Homemade Delights was born out of a passion to preserve and share the authentic flavors of traditional Indian homemade snacks and condiments. What started as a small kitchen experiment to recreate grandma's recipes has now blossomed into a beloved brand.</p>
+                    <p class="text-gray-600 mb-6">We take pride in using time-honored techniques and the finest natural ingredients to create products that taste just like homemade - because they are! Each item is carefully prepared in small batches to ensure consistent quality and taste.</p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-amber-600"></i>
+                            </div>
+                            <span class="font-medium">100% Natural</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-amber-600"></i>
+                            </div>
+                            <span class="font-medium">No Preservatives</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-amber-600"></i>
+                            </div>
+                            <span class="font-medium">Family Recipes</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
+                                <i class="fas fa-check text-amber-600"></i>
+                            </div>
+                            <span class="font-medium">Hygienic Packaging</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-amber-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-amber-800 mb-4">What Our Customers Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our happy customers!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Priya Sharma</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The Dryfruits Laddo tastes exactly like my grandmother used to make! I'm so happy to have found XYZ products that maintain traditional flavors without any preservatives."</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Rahul Patel</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The Mango Pickle is outstanding! Perfect balance of sweet, sour and spicy. I've ordered 3 jars already and will definitely be ordering more."</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-amber-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Ananya Desai</h4>
+                            <div class="flex text-amber-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The Poha Chiwda is our family's new favorite tea-time snack. It's so fresh and crispy, with just the right amount of spices. Highly recommend!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-amber-800 mb-4">Get In Touch</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Have questions or want to place a bulk order? Reach out to us!</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2 bg-amber-50 p-8 rounded-lg">
+                    <h3 class="text-xl font-bold text-amber-800 mb-6">Contact Information</h3>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Our Address</h4>
+                                <p class="text-gray-600">123 Traditional Lane, Foodie City, FC 123456, India</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Call Us</h4>
+                                <p class="text-gray-600">+91 9876543210</p>
+                                <p class="text-gray-600">+91 1234567890</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-envelope text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email Us</h4>
+                                <p class="text-gray-600">info@xyzhomemade.com</p>
+                                <p class="text-gray-600">orders@xyzhomemade.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                <i class="fas fa-clock text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Working Hours</h4>
+                                <p class="text-gray-600">Monday - Saturday: 9:00 AM - 8:00 PM</p>
+                                <p class="text-gray-600">Sunday: 10:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 hover:bg-amber-200">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 hover:bg-amber-200">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 hover:bg-amber-200">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 hover:bg-amber-200">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 bg-amber-50 p-8 rounded-lg">
+                    <h3 class="text-xl font-bold text-amber-800 mb-6">Send Us a Message</h3>
+
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-700 font-medium mb-1">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-gray-700 font-medium mb-1">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-gray-700 font-medium mb-1">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-1">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-amber-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+            <p class="max-w-2xl mx-auto mb-6">Stay updated with our latest products, special offers, and traditional recipes straight to your inbox.</p>
+
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none text-gray-800">
+                <button type="submit" class="bg-amber-600 hover:bg-amber-700 px-6 py-3 rounded-r-lg font-medium">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-amber-500 rounded-full flex items-center justify-center mr-3">
+                            <span class="text-white font-bold">XYZ</span>
+                        </div>
+                        <h3 class="text-xl font-bold">XYZ Homemade Delights</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Bringing authentic homemade flavors to your doorstep with love and tradition.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-500"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-500">Home</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-amber-500">Products</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-500">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-500">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Our Products</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500">Chiwda Varieties</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500">Laddos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500">Chaklis</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500">Pickles</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500">Masalas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500">Chutneys</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <address class="not-italic text-gray-400 space-y-2">
+                        <p>123 Traditional Lane, Foodie City, FC 123456, India</p>
+                        <p>Phone: +91 9876543210</p>
+                        <p>Email: info@xyzhomemade.com</p>
+                    </address>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 XYZ Homemade Delights. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg floating-btn hover:bg-green-600">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Category filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.category-tab');
+            const products = document.querySelectorAll('.product-card');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+
+                    const category = this.getAttribute('data-category');
+
+                    // Show/hide products based on category
+                    products.forEach(product => {
+                        if (category === 'all' || product.getAttribute('data-category') === category) {
+                            product.style.display = 'block';
+                        } else {
+                            product.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Mobile menu toggle (would need additional implementation)
+            const mobileMenuBtn = document.querySelector('.md\\:hidden');
+            mobileMenuBtn.addEventListener('click', function() {
+                // This would toggle a mobile menu (implementation not shown)
+                alert('Mobile menu would open here in a complete implementation');
+            });
+        });
+    </script>
+</body>
+</html>
